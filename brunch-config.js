@@ -59,11 +59,12 @@ exports.config = {
 
   modules: {
     autoRequire: {
-      "js/app.js": ["web/static/js/app"]
+      "js/app.js": ["jquery", "web/static/js/app"]
     }
   },
 
   npm: {
-    enabled: true
+    enabled: true,
+    globals: {"jQuery": "jquery"}
   }
 };

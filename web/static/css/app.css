@@ -1,1 +1,22 @@
 /* This file is for your main application css. */
+
+.parallax-container {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 100px;
+  width: 900px;
+}
+
+.help-block {
+  color: red;
+  text-transform: capitalize;
+  position: absolute;
+  top: 35px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 25px;
+}
