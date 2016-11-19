@@ -36,8 +36,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :expenses, Expenses.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "ismqui",
+  password: "ismqui",
   database: "expenses_dev",
   hostname: "localhost",
   pool_size: 10
