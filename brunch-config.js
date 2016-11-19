@@ -59,7 +59,7 @@ exports.config = {
 
   modules: {
     autoRequire: {
-      "js/app.js": ["jquery", "web/static/js/app"]
+      "js/app.js": ["jquery", "materialize-css", "web/static/js/app"]
     }
   },
 

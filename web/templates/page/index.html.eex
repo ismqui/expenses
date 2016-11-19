@@ -1,31 +1,51 @@
+<br>
+<!-- <div class="container"> -->
 
-<div id="index-banner" class="parallax-container">
-  <!-- <div class="section no-pad-bot"> -->
-    <!-- <div class="container"> -->
-      <h1 class="header center teal-text text-lighten-2"><%= gettext "Welcome to %{name}", name: "SuperMarket!" %></h1>
-      <div class="row center">
-        <h5 class="header col s12 light">An amazing SuperMarket that will blow your mind.</h5>
+  <div class="row">
+    <div class="col s12 m12 l12">
+
+      <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+          <div class="container">
+            <h1 class="center teal-text text-lighten-2"><%= gettext "Welcome to %{name}", name: "SuperMarket!" %></h1>
+            <div class="row center">
+              <h5 class="col s12 light">An amazing SuperMarket that will blow your mind.</h5>
+            </div>
+            <div class="row center">
+              <a id="download-button" class="btn-large waves-effect waves-light teal lighten-1" href="#">Get started</a>
+            </div>
+          </div>
+        </div>
+        <div class="parallax">
+          <img src="images/supermarket2.jpg" class="responsive-img" alt="Unsplashed background img 1" style="display: block; transform: translate3d(-50%, 40px, 0px);" />
+        </div>
       </div>
-      <div class="row center">
-        <a id="download-button" class="btn-large waves-effect waves-light teal lighten-1" href="#">Get started</a>
+
+    </div>
+  </div>
+
+<!-- </div> -->
+
+<div class="container section row">
+  <div class="col s12 m12 l12">
+    <div class="section white">
+      <div class="row container">
+        <h2 class="header">Parallax</h2>
+        <p class="grey-text text-darken-3 lighten-3">
+          Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.
+        </p>
       </div>
-    <!-- </div> -->
-  <!-- </div> -->
-  <div class="parallax">
-    <img src="images/mifoto.jpg" alt="Unsplashed background img 1" style="display: block; transform: translate3d(-50%, 152px, 0px);"/>
-    <!-- <img class="responsive-img" src="images/mifoto.jpg" alt="Unsplashed background img 1" style="display: block; transform: translate3d(-50%, 152px, 0px);"/> -->
+    </div>
   </div>
 </div>
-<div class="section white">
-  <div class="row container">
-    <h2 class="header">Parallax</h2>
-    <p class="grey-text text-darken-3 lighten-3">
-      Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.
-    </p>
-  </div>
-</div>
-<div class="parallax-container valign-wrapper">
-  <div class="parallax">
-    <img src="images/supermarket.jpg" style="display: block;"/>
+
+
+<div class="row">
+  <div class="col s12 m12 l12">
+    <div class="parallax-container valign-wrapper">
+      <div class="parallax">
+        <img src="images/mifoto.jpg" class="responsive-img" style="display: block; transform: translate3d(-50%, 40px, 0px);"/>
+      </div>
+    </div>
   </div>
 </div>
