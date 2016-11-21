@@ -17,6 +17,7 @@ defmodule Expenses.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/categories/new", CategoryController, :new
   end
 
   # Other scopes may use custom stacks.
