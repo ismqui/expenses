@@ -19,7 +19,7 @@
 
       <nav>
         <div class="nav-wrapper">
-          <a class="brand-logo" href="#">Logo</a>
+          <a class="brand-logo" href="#">Logos</a>
           <ul class="dropdown-content" id="dropdown1">
             <li><a href="#">1</a></li>
             <li><a href="#">2</a></li>
