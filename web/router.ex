@@ -20,6 +20,9 @@ defmodule Expenses.Router do
     get "/categories", CategoryController, :index
     get "/categories/new", CategoryController, :new
     post "/categories/create", CategoryController, :create
+    get "/markets", MarketController, :index
+    get "/markets/new", MarketController, :new
+    post "/markets/create", MarketController, :create
   end
 
   # Other scopes may use custom stacks.

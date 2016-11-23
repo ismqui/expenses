@@ -1,0 +1,28 @@
+<h4>Markets</h4>
+
+<table class="striped">
+  <thead>
+    <tr>
+      <th data-field="id">Id</th>
+      <th data-field="name">Name</th>
+      <th data-field="address">Address</th>
+      <th data-field="city">City</th>
+      <th data-field="zipcode">ZipCode</th>
+      <th data-field="country">Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for market <- @markets do %>
+      <tr>
+          <td> <%= market.id %> </td>
+          <td> <%= market.name %> </td>
+          <td> <%= market.address %> </td>
+          <td> <%= market.city %> </td>
+          <td> <%= market.zipcode %> </td>
+          <td> <%= market.country %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link "new", to: market_path(@conn, :new), class: "btn btn-primary" %>
