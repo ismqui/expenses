@@ -51,6 +51,7 @@ defmodule Expenses.Web do
 
       import Expenses.Router.Helpers
       import Expenses.ErrorHelpers
+      import Expenses.InputHelpers
       import Expenses.Gettext
     end
   end

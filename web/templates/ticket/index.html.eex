@@ -1,0 +1,24 @@
+<h4>Tickets</h4>
+
+
+<table class="striped">
+  <thead>
+    <tr>
+      <th data-field="id">Id</th>
+      <th data-field="market_id">Market id</th>
+      <th date-field="date_ticket">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for ticket <- @tickets do %>
+      <tr>
+          <td> <%= ticket.id %> </td>
+          <td> <%= ticket.market_id %> </td>
+          <td> <%= ticket.date_ticket %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link "new", to: ticket_path(@conn, :new), class: "btn btn-primary" %>
