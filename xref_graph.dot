@@ -1,0 +1,62 @@
+digraph "xref graph" {
+  "lib/expenses.ex"
+  "lib/expenses.ex" -> "lib/expenses/endpoint.ex"
+  "lib/expenses/endpoint.ex" -> "lib/expenses.ex" [label="(compile)"]
+  "lib/expenses/endpoint.ex" -> "web/router.ex" [label="(compile)"]
+  "web/router.ex" -> "lib/expenses.ex" [label="(compile)"]
+  "web/router.ex" -> "web/web.ex" [label="(compile)"]
+  "lib/expenses.ex" -> "lib/expenses/repo.ex"
+  "lib/expenses/endpoint.ex"
+  "lib/expenses/repo.ex"
+  "web/channels/user_socket.ex"
+  "web/controllers/category_controller.ex"
+  "web/controllers/category_controller.ex" -> "web/models/category.ex" [label="(compile)"]
+  "web/models/category.ex" -> "web/web.ex" [label="(compile)"]
+  "web/controllers/category_controller.ex" -> "web/gettext.ex" [label="(compile)"]
+  "web/controllers/category_controller.ex" -> "web/router.ex" [label="(compile)"]
+  "web/controllers/category_controller.ex" -> "web/web.ex" [label="(compile)"]
+  "web/controllers/category_controller.ex" -> "lib/expenses/repo.ex"
+  "web/controllers/market_controller.ex"
+  "web/controllers/market_controller.ex" -> "web/gettext.ex" [label="(compile)"]
+  "web/controllers/market_controller.ex" -> "web/models/market.ex" [label="(compile)"]
+  "web/models/market.ex" -> "web/web.ex" [label="(compile)"]
+  "web/controllers/market_controller.ex" -> "web/router.ex" [label="(compile)"]
+  "web/controllers/market_controller.ex" -> "web/web.ex" [label="(compile)"]
+  "web/controllers/market_controller.ex" -> "lib/expenses/repo.ex"
+  "web/controllers/page_controller.ex"
+  "web/controllers/page_controller.ex" -> "web/gettext.ex" [label="(compile)"]
+  "web/controllers/page_controller.ex" -> "web/router.ex" [label="(compile)"]
+  "web/controllers/page_controller.ex" -> "web/web.ex" [label="(compile)"]
+  "web/gettext.ex"
+  "web/models/category.ex"
+  "web/models/market.ex"
+  "web/router.ex"
+  "web/views/category_view.ex"
+  "web/views/category_view.ex" -> "web/views/error_helpers.ex" [label="(compile)"]
+  "web/views/error_helpers.ex" -> "web/gettext.ex"
+  "web/views/category_view.ex" -> "web/gettext.ex" [label="(compile)"]
+  "web/views/category_view.ex" -> "web/router.ex" [label="(compile)"]
+  "web/views/category_view.ex" -> "web/web.ex" [label="(compile)"]
+  "web/views/error_helpers.ex"
+  "web/views/error_view.ex"
+  "web/views/error_view.ex" -> "web/views/error_helpers.ex" [label="(compile)"]
+  "web/views/error_view.ex" -> "web/gettext.ex" [label="(compile)"]
+  "web/views/error_view.ex" -> "web/router.ex" [label="(compile)"]
+  "web/views/error_view.ex" -> "web/web.ex" [label="(compile)"]
+  "web/views/layout_view.ex"
+  "web/views/layout_view.ex" -> "web/views/error_helpers.ex" [label="(compile)"]
+  "web/views/layout_view.ex" -> "web/gettext.ex" [label="(compile)"]
+  "web/views/layout_view.ex" -> "web/router.ex" [label="(compile)"]
+  "web/views/layout_view.ex" -> "web/web.ex" [label="(compile)"]
+  "web/views/market_view.ex"
+  "web/views/market_view.ex" -> "web/views/error_helpers.ex" [label="(compile)"]
+  "web/views/market_view.ex" -> "web/gettext.ex" [label="(compile)"]
+  "web/views/market_view.ex" -> "web/router.ex" [label="(compile)"]
+  "web/views/market_view.ex" -> "web/web.ex" [label="(compile)"]
+  "web/views/page_view.ex"
+  "web/views/page_view.ex" -> "web/views/error_helpers.ex" [label="(compile)"]
+  "web/views/page_view.ex" -> "web/gettext.ex" [label="(compile)"]
+  "web/views/page_view.ex" -> "web/router.ex" [label="(compile)"]
+  "web/views/page_view.ex" -> "web/web.ex" [label="(compile)"]
+  "web/web.ex"
+}
