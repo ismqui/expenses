@@ -5,7 +5,7 @@
   <thead>
     <tr>
       <th data-field="id">Id</th>
-      <th data-field="market_id">Market id</th>
+      <th data-field="market_name">Market</th>
       <th date-field="date_ticket">Date</th>
     </tr>
   </thead>
@@ -13,7 +13,7 @@
     <%= for ticket <- @tickets do %>
       <tr>
           <td> <%= ticket.id %> </td>
-          <td> <%= ticket.market_id %> </td>
+          <td> <%= get_market(@markets, ticket.market_id) %> </td>
           <td> <%= ticket.date_ticket %> </td>
       </tr>
     <% end %>

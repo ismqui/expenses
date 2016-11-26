@@ -8,9 +8,9 @@
 <%= form_for @changeset, ticket_path(@conn, :create), fn f -> %>
   <div class="row">
     <div class="form-group input-field col s6">
-      <%= text_input f, :market_id, placeholder: "Market id", class: "form-control" %>
+      <%= number_input f, :market_id, placeholder: "Market id", class: "form-control" %>
       <%= error_tag f, :market_id %>
-      <%= text_input f, :date_ticket, placeholder: "yyyy-mm-dd", class: "form-control datepicker" %>
+      <%= text_input f, :date_ticket, placeholder: "Date: yyyy-mm-dd", class: "form-control datepicker" %>
       <%= error_tag f, :date_ticket %>
     </div>
   </div>
