@@ -12,7 +12,8 @@ defmodule Expenses.TicketController do
 
   def new(conn, _params) do
     changeset = Ticket.changeset(%Ticket{}, %{})
-    render conn, "new.html", changeset: changeset
+    markets = Repo.all(Market)
+    render conn, "new.html", changeset: changeset, markets: markets
   end
 
   def create(conn, %{"ticket" => ticket}) do

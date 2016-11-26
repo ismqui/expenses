@@ -7,4 +7,9 @@ defmodule Expenses.TicketView do
                     |> List.first
     name
   end
+
+  def market_to_select(markets) do
+    markets
+    |> Enum.map(fn x -> {String.to_atom(x.name), x.id} end)
+  end
 end
