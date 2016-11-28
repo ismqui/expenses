@@ -1,5 +1,7 @@
 <h4>Purchases</h4>
 
+<h6>Ticket nº: <%= @ticket.id %>   Market: <%= @ticket.market.name %> </h6>
+
 <table class="striped">
   <thead>
     <tr>

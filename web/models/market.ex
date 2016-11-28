@@ -7,6 +7,7 @@ defmodule Expenses.Market do
     field :city, :string
     field :zipcode, :integer
     field :country, :string
+    has_many :tickets, Expenses.Ticket
 
     timestamps
   end

@@ -4,6 +4,7 @@ defmodule Expenses.Ticket do
   schema "tickets" do
     belongs_to :market, Expenses.Market
     field :date_ticket, Ecto.DateTime
+    has_many :purchases, Expenses.Purchase
 
     timestamps
   end

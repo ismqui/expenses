@@ -6,8 +6,8 @@ defmodule Expenses.TicketController do
 
   def index(conn, _params) do
     tickets = Repo.all(Ticket)
-    markets = Repo.all(Market)
-    render conn, "index.html", tickets: tickets, markets: markets
+    tickets = Repo.preload(tickets, :market)
+    render conn, "index.html", tickets: tickets
   end
 
   def new(conn, _params) do
