@@ -1,0 +1,22 @@
+<h4>Purchases</h4>
+
+<table class="striped">
+  <thead>
+    <tr>
+      <th data-field="id">Id</th>
+      <th data-field="description">Description</th>
+      <th data-field="price">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for purchase <- @purchases do %>
+      <tr>
+          <td> <%= purchase.id %> </td>
+          <td> <%= purchase.description %> </td>
+          <td> <%= purchase.price %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link "new", to: purchase_path(@conn, :new), class: "btn btn-primary" %>
