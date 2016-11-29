@@ -22,5 +22,8 @@
     <% end %>
   </tbody>
 </table>
+<div class="section right">
+  <p>Total: <%= total_price(@purchases) %></p>
+</div>
 <br>
 <%= link "new", to: purchase_path(@conn, :new, @ticket.id), class: "btn btn-primary" %>
