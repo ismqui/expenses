@@ -1,4 +1,8 @@
 # Expenses
+Control all your expenses.
+
+Main purpose is to learn elixir and phoenix.
+
 
 To start your Phoenix app:
 
