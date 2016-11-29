@@ -22,7 +22,6 @@ defmodule Expenses.PurchaseController do
     changeset = Purchase.changeset(%Purchase{}, purchase)
     id = purchase["ticket_id"]
 
-
     case Repo.insert(changeset) do
       {:ok, _changeset} ->
         conn

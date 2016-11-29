@@ -1,6 +1,6 @@
 <h4>Purchases</h4>
 <div class="center-align section">
-  <p><b>Ticket nº:</b><%= @ticket.id %><b> Market:</b> <%= @ticket.market.name %> <b>Date:</b> <%= datetime_to_string(@ticket.date_ticket) %></p>
+  <p><i class="material-icons">receipt</i> <b>Ticket nº:</b><%= @ticket.id %><b> Market:</b> <%= @ticket.market.name %> <b>Date:</b> <%= datetime_to_string(@ticket.date_ticket) %></p>
 </div>
 <div class="divider"></div>
 
