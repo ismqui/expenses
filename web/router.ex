@@ -27,7 +27,7 @@ defmodule Expenses.Router do
     get "/tickets/new", TicketController, :new
     post "/tickets/create", TicketController, :create
     get "/purchases/:id", PurchaseController, :index
-    get "/purchases/new", PurchaseController, :new
+    get "/purchases/new/:id", PurchaseController, :new
     post "/purchases/create", PurchaseController, :create
   end
 

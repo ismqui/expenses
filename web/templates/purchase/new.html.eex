@@ -8,8 +8,8 @@
 <%= form_for @changeset, purchase_path(@conn, :create), fn f -> %>
   <div class="row">
     <div class="form-group input-field col s6">
-      <%= number_input f, :ticket_id, placeholder: "Ticket Id", class: "form-control" %>
-      <%= error_tag f, :ticket_id %>
+      <%= number_input f, :ticket_id, placeholder: "ticket_id", class: "form-control" %>
+      <%= error_tag f, :id %>
       <%= text_input f, :description, placeholder: "Description", class: "form-control" %>
       <%= error_tag f, :description %>
       <%= number_input f, :price, placeholder: "price", step: "any", class: "form-control" %>
