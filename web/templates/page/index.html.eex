@@ -6,9 +6,9 @@
     <div id="index-banner" class="parallax-container">
       <div class="section no-pad-bot">
         <div class="container">
-          <h1 class="center teal-text text-lighten-2"><%= gettext "Welcome to %{name}", name: "SuperMarket!" %></h1>
+          <h1 class="center teal-text text-lighten-2"><%= gettext "Welcome, control your Shopping." %></h1>
           <div class="row center">
-            <h5 class="col s12 light">An amazing SuperMarket that will blow your mind.</h5>
+            <h5 class="col s12 light">Control all your expenses.</h5>
           </div>
           <div class="row center">
             <a id="download-button" class="btn-large waves-effect waves-light teal lighten-1" href="#">Get started</a>
