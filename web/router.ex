@@ -21,6 +21,7 @@ defmodule Expenses.Router do
     get "/categories/new", CategoryController, :new
     post "/categories/create", CategoryController, :create
     get "/markets", MarketController, :index
+    get "/markets/:id/edit", MarketController, :edit
     get "/markets/new", MarketController, :new
     post "/markets/create", MarketController, :create
     get "/tickets", TicketController, :index
