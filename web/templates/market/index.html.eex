@@ -20,6 +20,7 @@
           <td> <%= market.city %> </td>
           <td> <%= market.zipcode %> </td>
           <td> <%= market.country %> </td>
+          <td> <%= link "edit", to: market_path(@conn, :edit, market.id), class: "btn" %> </td>
       </tr>
     <% end %>
   </tbody>
