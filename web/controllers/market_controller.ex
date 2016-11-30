@@ -41,9 +41,6 @@ defmodule Expenses.MarketController do
   def update(conn, %{"id" => id, "market" => market_params}) do
     market = Repo.get!(Market, id)
     changeset = Market.changeset(market, market_params)
-    IO.puts "-------------------"
-    IO.inspect changeset
-    IO.puts "-------------------"
 
     case Repo.update(changeset) do
       {:ok, _market} ->
@@ -53,5 +50,14 @@ defmodule Expenses.MarketController do
       {:error, changeset} ->
         render(conn, "edit.html", market: market, changeset: changeset)
     end
+  end
+
+  def delete(conn, %{"id" => id}) do
+    market = Repo.get!(Market, id)
+
+    Repo.delete!(market)
+    conn
+    |> put_flash(:info, "Market deleted!")
+    |> redirect(to: market_path(conn, :index))
   end
 end

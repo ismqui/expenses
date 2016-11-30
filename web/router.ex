@@ -28,6 +28,7 @@ defmodule Expenses.Router do
     post "/markets", MarketController, :create
     patch "/markets/:id", MarketController, :update
     put "/markets/:id", MarketController, :update
+    delete "/markets/:id", MarketController, :delete
 
     get "/tickets", TicketController, :index
     get "/tickets/new", TicketController, :new

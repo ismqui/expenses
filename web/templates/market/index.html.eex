@@ -22,6 +22,8 @@
           <td> <%= market.country %> </td>
           <td> <%= link "show", to: market_path(@conn, :show, market.id), class: "btn" %> </td>
           <td> <%= link "edit", to: market_path(@conn, :edit, market.id), class: "btn" %> </td>
+          <td> <%= link "delete", to: market_path(@conn, :delete, market.id), method: :delete,
+                   data: [confirm: "Are you sure?"], class: "btn" %> </td>
       </tr>
     <% end %>
   </tbody>
