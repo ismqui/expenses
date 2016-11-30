@@ -6,9 +6,10 @@
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
       <p>Something went wrong! Please check errors below.</p>
+      <br>
       <ul>
         <%= for {attr, message} <- f.errors do %>
-          <li> <%= humanize(attr) %> <%= message %> </li>
+          <li> <%= humanize(attr) %> <%= translate_error(message) %> </li>
         <% end %>
       </ul>
     </div>
