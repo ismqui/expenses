@@ -2,7 +2,8 @@
 Control all your expenses.
 
 Main purpose is to learn elixir and phoenix.
-Thing **todo**:
+Things **todo**:
+
 1. Add edit/delete in controllers and views.
 2. Fix navbar problem with minimizecss.
 3. Add user and authentication.
