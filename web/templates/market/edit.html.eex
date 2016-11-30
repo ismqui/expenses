@@ -1,0 +1,9 @@
+<h4>Market</h4>
+
+<tr>
+  <td> <%= @market.id %></td>
+  <td> <%= @market.name %></td>
+  <td> <%= @market.address %></td>
+  <td> <%= @market.city %></td>
+  <td> <%= @market.country %></td>
+</tr>

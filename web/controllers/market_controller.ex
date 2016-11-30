@@ -29,7 +29,6 @@ defmodule Expenses.MarketController do
 
   def edit(conn, %{"id" => id}) do
     market = Repo.get!(Market, id)
-    changeset = Market.changeset(market)
-    render conn, "edit.html", changeset: changeset
+    render conn, "edit.html", market: market
   end
 end
