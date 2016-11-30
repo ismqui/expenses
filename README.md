@@ -4,10 +4,10 @@ Control all your expenses.
 Main purpose is to learn elixir and phoenix.
 Things **todo**:
 
-1. Add edit in controllers and views.
-2. Add update in controllers and views.
-3. Add show in controllers and views.
-4. Add delete in controllers and views.
+1. Add **edit** in controllers and views.
+2. Add **update** in controllers and views.
+3. Add **show** in controllers and views.
+4. Add **delete** in controllers and views.
 5. Fix navbar problem with minimizecss.
 6. Add user and authentication.
 7. More things to come.
