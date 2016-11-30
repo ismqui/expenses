@@ -27,8 +27,31 @@ defmodule Expenses.MarketController do
     end
   end
 
+  def show(conn, %{"id" => id}) do
+    market = Repo.get!(Market, id)
+    render conn, "show.html", market: market
+  end
+
   def edit(conn, %{"id" => id}) do
     market = Repo.get!(Market, id)
-    render conn, "edit.html", market: market
+    changeset = Market.changeset(market)
+    render conn, "edit.html", changeset: changeset, market: market
+  end
+
+  def update(conn, %{"id" => id, "market" => market_params}) do
+    market = Repo.get!(Market, id)
+    changeset = Market.changeset(market, market_params)
+    IO.puts "-------------------"
+    IO.inspect changeset
+    IO.puts "-------------------"
+
+    case Repo.update(changeset) do
+      {:ok, _market} ->
+        conn
+        |> put_flash(:info, "Market updated successfully.")
+        |> redirect(to: market_path(conn, :show, id))
+      {:error, changeset} ->
+        render(conn, "edit.html", market: market, changeset: changeset)
+    end
   end
 end

@@ -1,9 +1,27 @@
-<h4>Market</h4>
 
-<tr>
-  <td> <%= @market.id %></td>
-  <td> <%= @market.name %></td>
-  <td> <%= @market.address %></td>
-  <td> <%= @market.city %></td>
-  <td> <%= @market.country %></td>
-</tr>
+<h4>Edit Market</h4>
+
+<%= form_for @changeset, market_path(@conn, :update, @market), fn f -> %>
+
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Something went wrong! Please check errors below.</p>
+      <ul>
+        <%= for {attr, message} <- f.errors do %>
+          <li> <%= humanize(attr) %> <%= message %> </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="form-group input-field col s6">
+      <%= text_input f, :name, placeholder: "Market name", class: "form-control" %>
+      <%= text_input f, :address, placeholder: "Address", class: "form-control" %>
+      <%= text_input f, :city, placeholder: "City", class: "form-control" %>
+      <%= text_input f, :zipcode, placeholder: "Zipcode", class: "form-control" %>
+      <%= text_input f, :country, placeholder: "Country", class: "form-control" %>
+    </div>
+  </div>
+  <%= submit "Save market", class: "btn btn-primary" %>
+
+<% end %>

@@ -1,0 +1,24 @@
+<h4>Market</h4>
+
+<ul class="collapsible popout" data-collapsible="expandable">
+  <li>
+    <div class="collapsible-header active"><i class="material-icons">info_outline</i>Id</div>
+    <div class="collapsible-body"><p><%= @market.id %></p></div>
+  </li>
+  <li>
+    <div class="collapsible-header active"><i class="material-icons">shopping_cart</i>Name</div>
+     <div class="collapsible-body"><p><%= @market.name %></p></div>
+  </li>
+  <li>
+    <div class="collapsible-header active"><i class="material-icons">store</i>Address</div>
+     <div class="collapsible-body"><p><%= @market.address %></p></div>
+  </li>
+  <li>
+    <div class="collapsible-header active"><i class="material-icons">location_on</i>City</div>
+    <div class="collapsible-body"><p><%= @market.city %></p></div>
+  </li>
+  <li>
+    <div class="collapsible-header active"><i class="material-icons">language</i>Country</div>
+    <div class="collapsible-body"><p><%= @market.country %></p></div>
+  </li>
+</ul class="">
