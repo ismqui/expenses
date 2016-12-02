@@ -18,8 +18,7 @@ defmodule Expenses.TicketController do
 
   def create(conn, %{"ticket" => ticket}) do
 
-    {:ok, ecto_date} = ticket["date_ticket"] |> Ecto.Date.cast
-    ecto_datetime = Ecto.DateTime.from_date(ecto_date)
+    ecto_datetime = format_date(ticket["date_ticket"])
 
     numeric_ticket = Map.update!(ticket,"market_id", &String.to_integer(&1))
      |> Map.put("date_ticket", ecto_datetime)
@@ -32,8 +31,19 @@ defmodule Expenses.TicketController do
         |> put_flash(:info, "Ticket created")
         |> redirect(to: ticket_path(conn, :index))
       {:error, changeset} ->
+        markets = Repo.all(Market)
         conn
-        |> render("new.html", changeset: changeset)
+        |> render("new.html", changeset: changeset, markets: markets)
     end
   end
+
+  defp format_date("") do
+    ""
+  end
+
+  defp format_date(date) do
+    {:ok, ecto_date} = date |> Ecto.Date.cast
+    Ecto.DateTime.from_date(ecto_date)
+  end
+
 end
