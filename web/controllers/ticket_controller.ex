@@ -20,8 +20,17 @@ defmodule Expenses.TicketController do
 
     ecto_datetime = format_date(ticket["date_ticket"])
 
-    numeric_ticket = Map.update!(ticket,"market_id", &String.to_integer(&1))
-     |> Map.put("date_ticket", ecto_datetime)
+    IO.puts "--------------"
+    IO.inspect ecto_datetime
+    IO.puts "--------------"
+
+    numeric_ticket =
+      ticket |>
+      format_ticket_id |>
+      Map.put("date_ticket", ecto_datetime)
+
+    # numeric_ticket = Map.update!(ticket,"market_id", &String.to_integer(&1))
+    #  |> Map.put("date_ticket", ecto_datetime)
 
     changeset = Ticket.changeset(%Ticket{}, numeric_ticket)
 
@@ -46,4 +55,11 @@ defmodule Expenses.TicketController do
     Ecto.DateTime.from_date(ecto_date)
   end
 
+  defp format_ticket_id(%{"market_id" => "" } = ticket) do
+    ticket
+  end
+
+  defp format_ticket_id(ticket) do
+    Map.update!(ticket,"market_id", &String.to_integer(&1))
+  end
 end
