@@ -17,7 +17,7 @@
       <tr>
           <td> <%= purchase.id %> </td>
           <td> <%= purchase.description %> </td>
-          <td> <%= purchase.price %> </td>
+          <td name="price"><%= purchase.price %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,21 @@
   <p>Total: <%= total_price(@purchases) %></p>
 </div>
 <br>
+<div class="section right">
+  Total:<input type="text" name="total" id="total"/>
+</div>
+<br><br>
 <%= link "new", to: purchase_path(@conn, :new, @ticket.id), class: "btn btn-primary" %>
+<!--
+<script type="text/javascript">
+  function addPrices(){
+    var arr = document.getElementsByTagName('td');
+    var tot = 0;
+    for(var i=0;i<arr.length;i++){
+      if(arr.namedItem('price'))
+      if(parseInt(arr[i].innerHTML))
+        tot += parseInt(arr[i].innerHTML);
+    }
+    document.getElementById('total').value = tot;
+  }
+</script> -->
