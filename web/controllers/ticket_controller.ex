@@ -18,21 +18,12 @@ defmodule Expenses.TicketController do
 
   def create(conn, %{"ticket" => ticket}) do
 
-    ecto_datetime = format_date(ticket["date_ticket"])
-
-    IO.puts "--------------"
-    IO.inspect ecto_datetime
-    IO.puts "--------------"
-
-    numeric_ticket =
+    formated_ticket =
       ticket |>
       format_ticket_id |>
-      Map.put("date_ticket", ecto_datetime)
+      format_date
 
-    # numeric_ticket = Map.update!(ticket,"market_id", &String.to_integer(&1))
-    #  |> Map.put("date_ticket", ecto_datetime)
-
-    changeset = Ticket.changeset(%Ticket{}, numeric_ticket)
+    changeset = Ticket.changeset(%Ticket{}, formated_ticket)
 
     case Repo.insert(changeset) do
       {:ok, _ticket} ->
@@ -46,13 +37,14 @@ defmodule Expenses.TicketController do
     end
   end
 
-  defp format_date("") do
-    ""
+  defp format_date(%{"date_ticket" => ""} = ticket) do
+    ticket
   end
 
-  defp format_date(date) do
-    {:ok, ecto_date} = date |> Ecto.Date.cast
-    Ecto.DateTime.from_date(ecto_date)
+  defp format_date(ticket) do
+    {:ok, ecto_date} = ticket["date_ticket"] |> Ecto.Date.cast
+
+    Map.put(ticket, "date_ticket", Ecto.DateTime.from_date(ecto_date))
   end
 
   defp format_ticket_id(%{"market_id" => "" } = ticket) do
