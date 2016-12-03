@@ -19,9 +19,9 @@ defmodule Expenses.TicketController do
   def create(conn, %{"ticket" => ticket}) do
 
     formated_ticket =
-      ticket |>
-      format_ticket_id |>
-      format_date
+      ticket
+       |> format_ticket_id
+       |> format_date
 
     changeset = Ticket.changeset(%Ticket{}, formated_ticket)
 
