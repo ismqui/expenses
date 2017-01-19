@@ -30,7 +30,7 @@
   Total:<input type="text" name="total" id="total"/>
 </div>
 <br><br>
-<%= link "new", to: purchase_path(@conn, :new, @ticket.id), class: "btn btn-primary" %>
+<%= link "new", to: ticket_purchase_path(@conn, :new, @ticket.id), class: "btn btn-primary" %>
 <!--
 <script type="text/javascript">
   function addPrices(){

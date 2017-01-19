@@ -1,36 +1,37 @@
 defmodule Expenses.PurchaseController do
   use Expenses.Web, :controller
+  alias Expenses.Router.Helpers
   import Ecto.Query
 
   alias Expenses.Purchase
   alias Expenses.Ticket
 
-  def index(conn, %{"id" => id}) do
-    query = from p in Purchase, where: p.ticket_id == ^id
+  def index(conn, %{"ticket_id" => ticket_id}) do
+    query = from p in Purchase, where: p.ticket_id == ^ticket_id
     purchases = Repo.all(query)
-    ticket = Repo.get(Ticket, String.to_integer(id))
+    ticket = Repo.get(Ticket, String.to_integer(ticket_id))
     ticket = Repo.preload(ticket, :market)
     render conn, "index.html", purchases: purchases, ticket: ticket
   end
 
-  def new(conn, %{"id" => id}) do
+  def new(conn, %{"ticket_id" => ticket_id}) do
     changeset = Purchase.changeset(%Purchase{}, %{})
-    render conn, "new.html", changeset: changeset, id: id
+    render conn, "new.html", changeset: changeset, ticket_id: ticket_id
   end
 
   def create(conn, %{"purchase" => purchase}) do
     changeset = Purchase.changeset(%Purchase{}, purchase)
-    id = purchase["ticket_id"]
+    ticket_id = purchase["ticket_id"]
 
     case Repo.insert(changeset) do
       {:ok, _changeset} ->
         conn
         |> put_flash(:info, "Purchase inserted")
-        |> redirect(to: purchase_path(conn, :index, id))
+        |> redirect(to: Helpers.ticket_purchase_path(conn, :index, ticket_id))
       {:error, changeset} ->
         IO.inspect changeset
         conn
-        |> render("new.html", id: id, changeset: changeset)
+        |> render("new.html", ticket_id: ticket_id, changeset: changeset)
     end
   end
 end

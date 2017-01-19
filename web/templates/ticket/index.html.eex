@@ -15,7 +15,7 @@
           <td> <%= ticket.id %> </td>
           <td> <%= ticket.market.name %> </td>
           <td> <%= ticket.date_ticket %> </td>
-          <td> <%= link "+", to: purchase_path(@conn, :index, ticket.id), class: "btn btn-floating" %> </td>
+          <td> <%= link "+", to: ticket_purchase_path(@conn, :index, ticket.id), class: "btn btn-floating" %> </td>
       </tr>
     <% end %>
   </tbody>
