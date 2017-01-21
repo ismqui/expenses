@@ -8,7 +8,7 @@
 <%= form_for @changeset, ticket_purchase_path(@conn, :create, @ticket_id), fn f -> %>
   <div class="row">
     <div class="form-group input-field col s6">
-      <%= number_input f, :ticket_id, placeholder: "Ticket id", class: "form-control", value: @ticket_id, disabled: true %>
+      <%= number_input f, :ticket_id, placeholder: "Ticket id", class: "form-control", value: @ticket_id, hidden: true %>
       <%= error_tag f, :ticket_id %>
       <%= text_input f, :description, placeholder: "Description", class: "form-control" %>
       <%= error_tag f, :description %>
