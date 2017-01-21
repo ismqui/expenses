@@ -26,10 +26,10 @@ defmodule Expenses.TicketController do
     changeset = Ticket.changeset(%Ticket{}, formated_ticket)
 
     case Repo.insert(changeset) do
-      {:ok, _ticket} ->
+      {:ok, ticket} ->
         conn
         |> put_flash(:info, "Ticket created")
-        |> redirect(to: ticket_path(conn, :index))
+        |> redirect(to: ticket_purchase_path(conn, :index, ticket.id))
       {:error, changeset} ->
         markets = Repo.all(Market)
         conn

@@ -11,4 +11,8 @@ defmodule Expenses.PurchaseView do
     purchases
     |> Enum.reduce(Decimal.new(0), fn(x, acc) -> Decimal.add(x.price, acc) end)
   end
+
+  def change_changeset(changeset, key, value) do
+     Ecto.Changeset.put_change(changeset, key, value)
+  end
 end

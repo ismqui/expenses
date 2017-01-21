@@ -15,11 +15,17 @@ defmodule Expenses.PurchaseController do
   end
 
   def new(conn, %{"ticket_id" => ticket_id}) do
-    changeset = Purchase.changeset(%Purchase{}, %{})
+    changeset = Purchase.changeset(%Purchase{}, %{ticket_id: ticket_id})
+    IO.puts "++++++++++++++++++"
+    IO.inspect changeset
+    IO.puts "++++++++++++++++++"
     render conn, "new.html", changeset: changeset, ticket_id: ticket_id
   end
 
   def create(conn, %{"purchase" => purchase}) do
+    IO.puts "++++++++++++++++++"
+    IO.inspect purchase
+    IO.puts "++++++++++++++++++"
     changeset = Purchase.changeset(%Purchase{}, purchase)
     ticket_id = purchase["ticket_id"]
 
