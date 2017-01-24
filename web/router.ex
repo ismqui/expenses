@@ -21,8 +21,11 @@ defmodule Expenses.Router do
     get "/categories/new", CategoryController, :new
     post "/categories/create", CategoryController, :create
 
-    resources "/markets", MarketController
+    resources "/users", UserController
+    get "/signin/:token", SessionController, :show, as: :signin
+    resources "/sessions", SessionController, only: [:new, :create, :delete]
 
+    resources "/markets", MarketController
     resources "/tickets", TicketController, only: [:index, :new, :create] do
       resources "/purchases", PurchaseController, only: [:index, :new, :create]
     end
