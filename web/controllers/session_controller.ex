@@ -42,7 +42,7 @@ defmodule Expenses.SessionController do
         |> put_flash(:info, "You signed in successfully.")
         |> redirect(to: page_path(conn, :index))
 
-      {:error, reason} ->
+      {:error, _reason} ->
         conn
         |> put_flash(:error, "The login token is invalid.")
         |> redirect(to: session_path(conn, :new))

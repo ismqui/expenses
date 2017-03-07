@@ -6,7 +6,7 @@ defmodule Expenses.Ticket do
     field :date_ticket, Ecto.DateTime
     has_many :purchases, Expenses.Purchase
 
-    timestamps
+    timestamps()
   end
 
   def changeset(model, params \\ %{}) do

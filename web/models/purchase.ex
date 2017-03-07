@@ -6,7 +6,7 @@ defmodule Expenses.Purchase do
     field :price, :decimal
     belongs_to :ticket, Expenses.Ticket
 
-    timestamps
+    timestamps()
   end
 
   def changeset(model, params \\ %{}) do

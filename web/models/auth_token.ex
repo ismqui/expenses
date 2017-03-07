@@ -6,7 +6,7 @@ defmodule Expenses.AuthToken do
 
   schema "auth_tokens" do
     field :value, :string
-    belongs_to :user, Expenses.User
+    belongs_to :user, User
 
     timestamps(updated_at: false)
   end

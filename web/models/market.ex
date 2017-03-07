@@ -9,7 +9,7 @@ defmodule Expenses.Market do
     field :country, :string
     has_many :tickets, Expenses.Ticket
 
-    timestamps
+    timestamps()
   end
 
   def changeset(model, params \\ %{}) do
