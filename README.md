@@ -1,16 +1,14 @@
 # Expenses
 Control all your expenses.
 
-Main purpose is to learn elixir and phoenix.
-Things **todo**:
+Phoenix version 1.2
 
-1. Add **edit** in controllers and views.
-2. Add **update** in controllers and views.
-3. Add **show** in controllers and views.
-4. Add **delete** in controllers and views.
+Main purpose is to learn elixir and phoenix.
+**todo** list:
+
+1. Final changes for passwordless authentication.
 5. Fix navbar problem with minimizecss.
-6. Add user and authentication.
-7. More things to come.
+6. More things to come.
 
 ---
 

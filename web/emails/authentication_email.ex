@@ -16,11 +16,4 @@ defmodule Expenses.AuthenticationEmail do
     |> render("login_link.text")
   end
 
-  def prueba do
-    new_email()
-    |> to("ismqui@gmail.com")
-    |> from("ismqui.elixir@gmail.com")
-    |> subject("Welcome!")
-    |> text_body("Welcome to Expenses!")
-  end
 end
