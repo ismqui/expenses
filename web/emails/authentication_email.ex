@@ -17,7 +17,7 @@ defmodule Expenses.AuthenticationEmail do
   end
 
   def prueba do
-    new_email
+    new_email()
     |> to("ismqui@gmail.com")
     |> from("ismqui.elixir@gmail.com")
     |> subject("Welcome!")
