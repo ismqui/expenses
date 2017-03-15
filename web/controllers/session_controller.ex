@@ -11,12 +11,6 @@ defmodule Expenses.SessionController do
     Login page with email form.
   """
   def new(conn, _params) do
-    IO.puts "+++++++++++++++++++++++++"
-    IO.inspect conn
-    user_id = get_session(conn, :user_id)
-    IO.inspect user_id
-    IO.inspect conn.assigns[:current_user]
-    IO.puts "+++++++++++++++++++++++++"
     render(conn, "new.html")
   end
 
