@@ -11,7 +11,7 @@
             <h5 class="col s12 light">Control all your expenses.</h5>
           </div>
           <div class="row center">
-            <a id="download-button" class="btn-large waves-effect waves-light teal lighten-1" href="#">Get started</a>
+            <a id="download-button" class="btn-large waves-effect waves-light teal lighten-1" href="#">Sign in</a>
           </div>
         </div>
       </div>
